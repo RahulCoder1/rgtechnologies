@@ -29,14 +29,141 @@
 
 </head>
 
+<style type="text/css">
+  /* HEADER */
+  .header {
+      height: 50px; /* Reduced height for a compact look */
+      padding: 5px 10px; /* Less padding */
+      background: #fff;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  /* CONTAINER */
+  .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  /* ROTATING CUBE AREA */
+  .box-area {
+      position: relative;
+      width: 40px; /* Adjusted cube size */
+      height: 40px;
+      perspective: 400px; /* Adjusted for proper 3D effect */
+      margin-right: 5px; /* Proper spacing */
+  }
+  
+  /* CUBE */
+  .box {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      animation: rotateBox 4s infinite linear;
+  }
+  
+  /* CUBE FACES */
+  .box-face {
+      position: absolute;
+      width: 40px; /* Matching box area */
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* IMAGE INSIDE THE CUBE */
+  .box-face img {
+      width: 90%; /* Adjust image size within the box */
+      height: 90%;
+      object-fit: contain; /* Ensures the image is well-aligned and not stretched */
+  }
+  
+  /* POSITIONING EACH FACE OF THE CUBE */
+  #box-front  { transform: rotateY(  0deg) translateZ(20px); }
+  #box-right  { transform: rotateY( 90deg) translateZ(20px); }
+  #box-back   { transform: rotateY(180deg) translateZ(20px); }
+  #box-left   { transform: rotateY(-90deg) translateZ(20px); }
+  
+  /* ROTATION ANIMATION */
+  @keyframes rotateBox {
+      0%   { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+  }
+  
+  /* COMPANY NAME */
+  .sitename {
+      font-size: 14px; /* Slightly smaller for balance */
+      font-weight: bold;
+      color: #333;
+      margin-left: 5px;
+  }
+  
+  /* NAVIGATION MENU */
+  .navmenu ul {
+      list-style: none;
+      display: flex;
+      gap: 8px; /* Reduced gap */
+  }
+  
+  .navmenu a {
+      text-decoration: none;
+      color: #333;
+      font-size: 12px; /* Smaller font */
+      font-weight: 600;
+  }
+  
+  /* SOCIAL LINKS */
+  .header-social-links {
+      display: flex;
+      gap: 6px;
+  }
+  
+  .header-social-links a {
+      color: #333;
+      font-size: 12px; /* Reduced size */
+  }
+  
+  
+  </style>
 <body class="index-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center">
 
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <div class="d-flex align-items-center">
+            <div class="box-area">
+                <div class="box">
+                    <div id="box-front" class="box-face">
+                        <img src="assets/img/logo1.png" alt="Suvarna HIS">
+                    </div>
+                    <div id="box-right" class="box-face">
+                        <img src="assets/img/logo1.png" alt="Suvarna LIS">
+                    </div>
+                    <div id="box-back" class="box-face">
+                        <img src="assets/img/logo1.png" alt="Suvarna DMS">
+                    </div>
+                    <div id="box-left" class="box-face">
+                        <img src="assets/img/logo1.png" alt="Suvarna RIS">
+                    </div>
+                </div>
+            </div> 
+        </div>
+       
       <a href="index.html" class="logo d-flex align-items-center me-auto">
   
-        <h1 class="sitename">RG Technologies</h1><span></span>
+        <h1 class="sitename">&nbsp;CodeCarfts Pvt.Ltd</h1><span></span>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -46,7 +173,7 @@
             <ul>
               <li><a href="team.html">Team</a></li>
               <li><a href="testimonials.html">Testimonials</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown" style="display: none;"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown" style="display:none;"></i></a>
                 <ul>
                   <li><a href="#">Deep Dropdown 1</a></li>
                   <li><a href="#">Deep Dropdown 2</a></li>
@@ -453,7 +580,7 @@
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">RG Company</span>
+            <span class="sitename">RG CodeCarfts Pvt.Ltd</span>
           </a>
           <div class="footer-contact pt-3">
             <p>Fortune 9,Raj Bhavan Rd</p>
